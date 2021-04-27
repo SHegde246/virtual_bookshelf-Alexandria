@@ -1,0 +1,70 @@
+ {% extends 'bookshelf/base.html' %}
+
+	{% block content %}
+		<hr>
+		<div>
+			<h6>Genre(s): {% if checked_labels %}
+								{{checked_labels}}
+			            {% else %}
+								-
+					    {% endif %}</h6>
+			<h6>Author: {% if search.author %}
+								{{search.author}}
+			            {% else %}
+								-
+					    {% endif %}</h6>
+		</div>
+		<hr>
+		<h2 style="text-align: center;">Genre and Author Match:</h2>
+		<hr>
+{% if books.0 %}
+		{% for book in books.0 %}
+   		 	<div>
+				
+   		     		<h3><a href="{% url 'book_details' pk=book.pk %}">{{ book.title }}</a></h3>
+	   		     	<h4>Author: {{ book.author }}</h4>
+				<h4>Genre(s):- {{book.genre }}</h4>
+				<a class="button2" href="{% url 'create_shelf_obj' pk=book.pk %}">Add to Shelf</a> 
+					
+		    </div>
+			<hr>
+		{% endfor %}
+		
+{% endif %}
+<hr/><center>-</center><br/><hr/>
+		<h2 style="text-align: center;">Author Match:</h2>
+		<hr>
+{% if books.1 %}
+		{% for book in books.1 %}
+   		 	<div>
+				
+   		     		<h3><a href="{% url 'book_details' pk=book.pk %}">{{ book.title }}</a></h3>
+	   		     	<h4>Author: {{ book.author }}</h4>
+				<h4>Genre(s):- {{book.genre }}</h4>
+				<a class="button2" href="{% url 'create_shelf_obj' pk=book.pk %}">Add to Shelf</a>
+					
+		    </div>
+			<hr>
+		{% endfor %}
+		
+{% endif %}
+<hr/><center>-</center><br/><hr/>
+		<br><hr>
+		<h2 style="text-align: center;">Genre Match:</h2>
+		<hr>
+{% if books.2 %}
+		{% for book in books.2 %}
+   		 	<div>
+				
+   		     		<h3><a href="{% url 'book_details' pk=book.pk%}">{{ book.title }}</a></h3>
+   		     		<h4>Author: {{ book.author }}</h4>
+				<h4>Genre(s):- {{book.genre }}</h4>
+				<a class="button2" href="{% url 'create_shelf_obj' pk=book.pk %}">Add to Shelf</a>
+					
+		    </div>
+			<hr>
+		{% endfor %}
+		
+{% endif %}
+<hr/><center>-</center><br/><hr/>
+	{% endblock %}

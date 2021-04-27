@@ -1,0 +1,94 @@
+<html>
+<head>
+<style>
+
+.content {
+        width: 500px;
+        height: 600px;
+
+        position:absolute; /*it can be fixed too*/
+        left:0; right:0;
+        top:0; bottom:0;
+        margin:auto;
+
+        /*this to solve "the content will not be cut when the window is smaller than the content": */
+        max-width:100%;
+        max-height:100%;
+        overflow:auto;
+}
+.banner {
+	text-align:center;
+	background: url(resources/banner.jpeg);
+}
+
+.button {
+    display: block;
+    width: 110px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 1000px;
+   
+}
+
+.button2 {
+    display: block;
+    width: 110px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    left: 10px;
+}
+
+.button3 {
+    display: block;
+    width: 110px;
+    height: 25px;
+    background: #FF69B4;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 1200px;
+}
+
+.button4 {
+    display: block;
+    width: 110px;
+    height: 25px;
+    background: #00FA9A;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 10px;
+}
+
+
+</style>
+</head>
+<body>
+    <div>
+		<div><a href="{% url 'search_history' %}" class="button4">Search History</a></div>
+		<span style="text-align: center"><h1><a href="{% url 'home_page' %}">Alexandria</a></h1></span>
+		<div><a href="{% url 'shelf_page' %}" class="button">Go to Shelf</a></div>
+		<a class="button3" href="{% url 'logout' %}">Logout</a>
+		</hr>
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+</html>

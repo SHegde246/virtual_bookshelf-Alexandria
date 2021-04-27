@@ -1,0 +1,12 @@
+{% extends 'bookshelf/base.html' %}
+
+	{% block content %}
+		{% for search in searches %}
+   		 	<div>
+				<h2>{{search.date}}</h2>
+    	        <p>Genre(s): {{ search.genre|linebreaksbr }}</p>
+    	        <p>Author  : {{ search.author|linebreaksbr }}</p>
+		    </div>
+			<hr>
+		{% endfor %}
+	{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'bookshelf/base.html' %}
+
+{% block content %}
+        <h2>{{ book.title }}</h2>
+        <h5>By: {{ book.author }}
+        <br>Genre(s): {{ book.genre }}</h5>
+		{% if book.shelved  %}
+
+		{% else %}
+   			<!--h6><a href="{url 'shelving' books=books book=book search=search %}">Shelf</a></h6-->
+		{% endif %}
+		<hr>
+        <p>{{ book.summary|linebreaksbr }}</p>
+{% endblock %}

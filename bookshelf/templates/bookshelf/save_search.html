@@ -1,0 +1,10 @@
+{% extends 'bookshelf/base.html' %}
+
+	{% block content %}
+		<hr>
+		<h2>Enter preferences:</h2>
+		<form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+	    </form>
+	{% endblock %}

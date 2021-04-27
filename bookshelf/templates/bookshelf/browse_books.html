@@ -1,0 +1,20 @@
+{% extends 'bookshelf/base.html' %}
+
+	{% block content %}
+		<hr>
+		{% for book in books %}
+   		 	<div>
+   		     	<h2><!--a href="{ url 'book_details' books=books pk=book.pk %}">{{ book.title }}</a-->
+   		     	<a href="{% url 'book_details' pk=book.pk %}">{{ book.title }}</a>
+				</h2>
+    	        <p>Author  : {{ book.author|linebreaksbr }}</p>
+    	        <p>Genre(s): {{ book.genre|linebreaksbr }}</p>
+				
+		    </div>
+			<hr>
+		{% endfor %}
+	{% endblock %}
+
+
+
+
